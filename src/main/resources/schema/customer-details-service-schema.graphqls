@@ -1,0 +1,36 @@
+type Query {
+    customerDetails: [Customer]
+    customerDetailsById(custId: String): Customer
+    firstNCustomers(limit: Int): [Customer]
+}
+
+
+type Customer {
+    customerId: ID!
+    firstName: String
+    lastName: String
+    emailId: String!
+    phoneNumber: Int
+    creation_date: String
+    customerCategory: String
+    addressDetails: [Address]
+    subscriptionOffDate: String
+}
+
+type Address {
+    addressId: ID!
+    address1: String
+    address2: String
+    city: String
+    state: String
+    postalCode: String
+}
+
+enum AddressFilter {
+
+    Delhi,
+    Noida,
+    Banglore
+}
+
+
